@@ -5,13 +5,12 @@ var directionVector = Vector2.ZERO
 var animation = ""
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
-func _physics_process(delta):
-	var direction = Input.get_axis("ui_left", "ui_right")
-	var direction2 = Input.get_axis("ui_up", "ui_down")
-	
-	directionVector = Vector2(direction, direction2)
-	velocity = directionVector.normalized() * SPEED
+func _process(delta):
 	update_animation()
+
+func _physics_process(delta):
+	directionVector = Input.get_vector("esquerda", "direita", "cima", "baixo")
+	velocity = directionVector.normalized() * SPEED
 	move_and_slide()
 
 func update_animation():
