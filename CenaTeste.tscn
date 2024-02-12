@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://63t6wqhhe3dq"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_rmchh"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rmchh"]
 [ext_resource type="Texture2D" uid="uid://cf0hxu0288um8" path="res://Sprites/Small-8-Direction-Characters_by_AxulArt.png" id="2_xggx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
