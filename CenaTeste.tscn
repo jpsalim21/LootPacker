@@ -107,13 +107,17 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygfd4"]
+size = Vector2(53.5, 51)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh0ew"]
 size = Vector2(14, 13)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygfd4"]
-size = Vector2(33, 32)
-
 [node name="Cena" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
+process_callback = 0
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_rmchh")
@@ -128,18 +132,20 @@ sprite_frames = SubResource("SpriteFrames_qffuj")
 animation = &"Down"
 autoplay = "Idle"
 
-[node name="Shield" type="Sprite2D" parent="Player"]
+[node name="ItemSprite" type="Sprite2D" parent="Player"]
 z_index = 1
-position = Vector2(-3.55271e-15, -17)
+position = Vector2(-2.11758e-22, -17)
 scale = Vector2(0.0894737, 0.0894737)
 texture = ExtResource("3_otx8n")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
-process_callback = 0
-
 [node name="Chest2" type="Node2D" parent="."]
 script = ExtResource("4_30o5f")
+
+[node name="Area2D" type="Area2D" parent="Chest2"]
+position = Vector2(0, 27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest2/Area2D"]
+shape = SubResource("RectangleShape2D_ygfd4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Chest2"]
 
@@ -152,8 +158,4 @@ hframes = 4
 position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_jh0ew")
 
-[node name="Area2D" type="Area2D" parent="Chest2/StaticBody2D"]
-position = Vector2(0, 27)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest2/StaticBody2D/Area2D"]
-shape = SubResource("RectangleShape2D_ygfd4")
+[connection signal="body_entered" from="Chest2/Area2D" to="Chest2" method="_on_area_2d_body_entered"]
