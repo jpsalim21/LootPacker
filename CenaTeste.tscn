@@ -53,7 +53,8 @@ shape = SubResource("RectangleShape2D_hvt4o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_qffuj")
 animation = &"Up"
-frame_progress = 0.659849
+autoplay = "Up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
 process_callback = 0
