@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=36 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4hkyr"]
 [ext_resource type="Texture2D" uid="uid://u70muouqpq3n" path="res://Sprites/PlayerSprite.png" id="2_n5p11"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_s6rxb"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/AlchemyScript.gd" id="6_6bmic"]
 [ext_resource type="Texture2D" uid="uid://cs81tpytrike2" path="res://Sprites/icon.svg" id="6_7amfn"]
+[ext_resource type="Resource" uid="uid://cmfqrjr5nm6fm" path="res://Items/healingPotion.tres" id="7_vtvwo"]
+[ext_resource type="Resource" uid="uid://ciuiacrc0qpg8" path="res://Items/Armadura.tres" id="9_awcm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
 size = Vector2(11, 5)
@@ -207,7 +209,7 @@ zoom = Vector2(3.5, 3.5)
 process_callback = 0
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(149, 27)
+position = Vector2(-97, -3)
 script = ExtResource("1_4hkyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -247,22 +249,39 @@ hframes = 4
 position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_jh0ew")
 
-[node name="Alchemy" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Alchemy2" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(-137, -73)
 script = ExtResource("6_6bmic")
 player = NodePath("../Player")
+itemEntregue = ExtResource("7_vtvwo")
 
-[node name="Icon" type="Sprite2D" parent="Alchemy"]
-position = Vector2(-137, -74)
+[node name="Icon" type="Sprite2D" parent="Alchemy2"]
 scale = Vector2(0.365234, 0.285156)
 texture = ExtResource("6_7amfn")
 
-[node name="Area2D" type="Area2D" parent="Alchemy"]
+[node name="Area2D" type="Area2D" parent="Alchemy2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemy/Area2D"]
-position = Vector2(-137.75, -74.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemy2/Area2D"]
+shape = SubResource("RectangleShape2D_h18a0")
+
+[node name="Armaduras" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(-77, -74)
+script = ExtResource("6_6bmic")
+player = NodePath("../Player")
+itemEntregue = ExtResource("9_awcm5")
+
+[node name="Icon" type="Sprite2D" parent="Armaduras"]
+scale = Vector2(0.365234, 0.285156)
+texture = ExtResource("6_7amfn")
+
+[node name="Area2D" type="Area2D" parent="Armaduras"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Armaduras/Area2D"]
 shape = SubResource("RectangleShape2D_h18a0")
 
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Alchemy/Area2D" to="Alchemy" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Alchemy/Area2D" to="Alchemy" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Alchemy2/Area2D" to="Alchemy2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Alchemy2/Area2D" to="Alchemy2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Armaduras/Area2D" to="Armaduras" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Armaduras/Area2D" to="Armaduras" method="_on_area_2d_body_exited"]
