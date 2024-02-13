@@ -8,7 +8,7 @@ func _ready():
 	print("To pronto")
 
 func _process(delta):
-	if nearChest and Input.is_action_pressed("interact"):
+	if nearChest and Input.is_action_just_pressed("interact"):
 		player.changeItem(null)
 
 func _on_area_2d_body_entered(body):
