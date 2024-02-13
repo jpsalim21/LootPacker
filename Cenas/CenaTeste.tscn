@@ -155,7 +155,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xjeq3")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"IdleDown",
 "speed": 1.0
 }, {
 "frames": [{
@@ -219,8 +219,8 @@ shape = SubResource("RectangleShape2D_hvt4o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_qffuj")
-animation = &"DiagonalUp"
-autoplay = "Idle"
+animation = &"Up"
+autoplay = "IdleDown"
 
 [node name="ItemSprite" type="Sprite2D" parent="Player"]
 z_index = 1

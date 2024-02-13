@@ -5,7 +5,7 @@ var near : bool = false
 
 @export var itemEntregue : ItemClass
 
-func _process(delta):
+func _process(_delta):
 	if near and Input.is_action_just_pressed("interact"):
 		player.changeItem(itemEntregue)
 

@@ -7,7 +7,7 @@ var score = 0
 func _ready():
 	print("To pronto")
 
-func _process(delta):
+func _process(_delta):
 	if nearChest and Input.is_action_just_pressed("interact"):
 		player.changeItem(null)
 
