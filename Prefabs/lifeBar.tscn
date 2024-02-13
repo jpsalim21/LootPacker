@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1ivkp73agnyx"]
+[gd_scene load_steps=5 format=3 uid="uid://c1ivkp73agnyx"]
 
 [ext_resource type="Script" path="res://Scripts/Adventures/lifeBarScript.gd" id="1_qf062"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di8kc"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbcw5"]
 bg_color = Color(0, 0, 0, 0.32549)
@@ -18,11 +21,42 @@ grow_vertical = 2
 script = ExtResource("1_qf062")
 max = 50.0
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-z_index = 1
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 240.0
-offset_bottom = 20.0
+offset_right = 53.0
+offset_bottom = 41.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_di8kc")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 16.0
+offset_right = -2.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bbcw5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lk3eh")
+max_value = 1.0
+value = 0.76
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="Panel"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 23.0
+offset_right = -2.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_bbcw5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lk3eh")
 max_value = 1.0
