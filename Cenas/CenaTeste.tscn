@@ -1,14 +1,16 @@
-[gd_scene load_steps=36 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=42 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4hkyr"]
 [ext_resource type="Texture2D" uid="uid://u70muouqpq3n" path="res://Sprites/PlayerSprite.png" id="2_n5p11"]
-[ext_resource type="Texture2D" uid="uid://djyk8x0o7mfju" path="res://Sprites/armor.png" id="3_pmy1c"]
+[ext_resource type="Texture2D" uid="uid://djyk8x0o7mfju" path="res://Sprites/Itens/armor.png" id="3_pmy1c"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_c8d6b"]
 [ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_s6rxb"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/AlchemyScript.gd" id="6_6bmic"]
 [ext_resource type="Texture2D" uid="uid://cs81tpytrike2" path="res://Sprites/icon.svg" id="6_7amfn"]
 [ext_resource type="Resource" uid="uid://cmfqrjr5nm6fm" path="res://Items/healingPotion.tres" id="7_vtvwo"]
 [ext_resource type="Resource" uid="uid://ciuiacrc0qpg8" path="res://Items/Armadura.tres" id="9_awcm5"]
+[ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="10_13jr0"]
+[ext_resource type="Script" path="res://Scripts/Minigames/minigame1.gd" id="10_n51i0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
 size = Vector2(11, 5)
@@ -202,6 +204,34 @@ size = Vector2(14, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h18a0"]
 size = Vector2(47.5, 36.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nm75"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbt0v"]
+size = Vector2(34.8317, 29.9023)
+
+[sub_resource type="Animation" id="Animation_sk2uu"]
+resource_name = "minigame1"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Azul:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-25, 0), Vector2(29, 0), Vector2(-25, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4y8sa"]
+_data = {
+"minigame1": SubResource("Animation_sk2uu")
+}
+
 [node name="Cena" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -279,9 +309,48 @@ texture = ExtResource("6_7amfn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Armaduras/Area2D"]
 shape = SubResource("RectangleShape2D_h18a0")
 
+[node name="Minigame1" type="Node2D" parent="."]
+position = Vector2(-14, -35)
+script = ExtResource("10_n51i0")
+
+[node name="Quadrado3" type="Sprite2D" parent="Minigame1"]
+position = Vector2(2, 0)
+scale = Vector2(1.75, 0.25)
+texture = ExtResource("10_13jr0")
+
+[node name="Verde" type="Sprite2D" parent="Minigame1"]
+modulate = Color(0, 0.647059, 0.294118, 1)
+position = Vector2(-10, -9.98378e-07)
+scale = Vector2(0.4375, 0.25)
+texture = ExtResource("10_13jr0")
+
+[node name="Area2D" type="Area2D" parent="Minigame1/Verde"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame1/Verde/Area2D"]
+shape = SubResource("RectangleShape2D_6nm75")
+
+[node name="Azul" type="Sprite2D" parent="Minigame1"]
+modulate = Color(0.360784, 0.6, 0.988235, 1)
+position = Vector2(-10.6655, 0)
+scale = Vector2(0.0861285, 0.401307)
+texture = ExtResource("10_13jr0")
+
+[node name="Area2D" type="Area2D" parent="Minigame1/Azul"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame1/Azul/Area2D"]
+scale = Vector2(0.915, 1.07)
+shape = SubResource("RectangleShape2D_lbt0v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Minigame1"]
+libraries = {
+"": SubResource("AnimationLibrary_4y8sa")
+}
+
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Alchemy2/Area2D" to="Alchemy2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Alchemy2/Area2D" to="Alchemy2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Armaduras/Area2D" to="Armaduras" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Armaduras/Area2D" to="Armaduras" method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="Minigame1/Verde/Area2D" to="Minigame1" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Minigame1/Verde/Area2D" to="Minigame1" method="_on_area_2d_area_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ypketee01jl6"
-path="res://.godot/imported/items.png-c41acda67aec8d199b4868365c6bd508.ctex"
+uid="uid://c1tlgt05g43wh"
+path="res://.godot/imported/Quadrado.png-bc53870c4133d9977974abccc62672b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/items.png"
-dest_files=["res://.godot/imported/items.png-c41acda67aec8d199b4868365c6bd508.ctex"]
+source_file="res://Sprites/PlaceHolder/Quadrado.png"
+dest_files=["res://.godot/imported/Quadrado.png-bc53870c4133d9977974abccc62672b6.ctex"]
 
 [params]
 
