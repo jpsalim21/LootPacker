@@ -8,8 +8,9 @@ var animation = ""
 @onready var itemSprite : Sprite2D = $ItemSprite
 var currentItem : ItemClass
 
-func _ready():
+var escudo = "res://Items/Armadura.tres"
 
+func _ready():
 	pass
 
 func _process(delta):
@@ -43,7 +44,7 @@ func update_animation():
 		animation = "Idle"
 	animatedSprite.play(animation)
 
-func changeItem(newItem):
+func changeItem(newItem : ItemClass):
 	currentItem = newItem
 	if(currentItem == null):
 		itemSprite.visible = false

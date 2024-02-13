@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemClass" load_steps=3 format=3 uid="uid://ciuiacrc0qpg8"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/ItemClass.gd" id="1_umh4f"]
+[ext_resource type="Texture2D" uid="uid://djyk8x0o7mfju" path="res://Sprites/armor.png" id="2_ddc2w"]
+
+[resource]
+script = ExtResource("1_umh4f")
+sprite = ExtResource("2_ddc2w")
+itemIndex = 1
+nome = "Armadura"

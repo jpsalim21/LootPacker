@@ -4,6 +4,9 @@ extends Node2D
 var nearChest:bool
 var score = 0
 
+func _ready():
+	print("To pronto")
+
 func _process(delta):
 	if nearChest and Input.is_action_pressed("interact"):
 		score += 10
