@@ -12,10 +12,8 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		print("Entrou na area de alquimia")
+		print("Entrou em uma estação")
 		near = true
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		near = false
-
-#Resta configurar a classe que o changeItem chama

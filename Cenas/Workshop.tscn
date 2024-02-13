@@ -1,102 +1,102 @@
 [gd_scene load_steps=42 format=3 uid="uid://63t6wqhhe3dq"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4hkyr"]
-[ext_resource type="Texture2D" uid="uid://u70muouqpq3n" path="res://Sprites/PlayerSprite.png" id="2_n5p11"]
-[ext_resource type="Texture2D" uid="uid://djyk8x0o7mfju" path="res://Sprites/Itens/armor.png" id="3_pmy1c"]
-[ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_c8d6b"]
-[ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_s6rxb"]
-[ext_resource type="Script" path="res://Scripts/Estruturas/AlchemyScript.gd" id="6_6bmic"]
-[ext_resource type="Texture2D" uid="uid://cs81tpytrike2" path="res://Sprites/icon.svg" id="6_7amfn"]
-[ext_resource type="Resource" uid="uid://cmfqrjr5nm6fm" path="res://Items/healingPotion.tres" id="7_vtvwo"]
-[ext_resource type="Resource" uid="uid://ciuiacrc0qpg8" path="res://Items/Armadura.tres" id="9_awcm5"]
-[ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="10_13jr0"]
-[ext_resource type="Script" path="res://Scripts/Minigames/minigame1.gd" id="10_n51i0"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1pfsu"]
+[ext_resource type="Texture2D" uid="uid://u70muouqpq3n" path="res://Sprites/PlayerSprite.png" id="2_u0rb3"]
+[ext_resource type="Texture2D" uid="uid://djyk8x0o7mfju" path="res://Sprites/Itens/armor.png" id="3_5f131"]
+[ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_b1l47"]
+[ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_op4cw"]
+[ext_resource type="Script" path="res://Scripts/Estruturas/WorkstationScript.gd" id="6_oeid3"]
+[ext_resource type="Resource" uid="uid://cmfqrjr5nm6fm" path="res://Items/healingPotion.tres" id="7_14qm4"]
+[ext_resource type="Texture2D" uid="uid://cs81tpytrike2" path="res://Sprites/icon.svg" id="8_vwkn0"]
+[ext_resource type="Resource" uid="uid://ciuiacrc0qpg8" path="res://Items/armor.tres" id="9_d7m6n"]
+[ext_resource type="Script" path="res://Scripts/Minigames/minigame.gd" id="10_ce8cp"]
+[ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="11_87lbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
 size = Vector2(11, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p3v2n"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(195, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sn3du"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(210, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxouw"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(225, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flku3"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(180, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gc64r"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(75, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jidg0"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(90, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4l03j"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(105, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fp4sm"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(60, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlw54"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(255, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jxgpf"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(270, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bccgb"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(285, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ol4m5"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(240, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjeq3"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(270, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgkrq"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(135, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdnbb"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(120, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdkm1"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(165, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgr63"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(150, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ocd3e"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(15, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xp472"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(0, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_br0qj"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(45, 0, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jecld"]
-atlas = ExtResource("2_n5p11")
+atlas = ExtResource("2_u0rb3")
 region = Rect2(30, 0, 15, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qffuj"]
@@ -240,7 +240,7 @@ process_callback = 0
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(-97, -3)
-script = ExtResource("1_4hkyr")
+script = ExtResource("1_1pfsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-0.5, 6.5)
@@ -256,10 +256,10 @@ autoplay = "IdleDown"
 z_index = 1
 position = Vector2(0, -12)
 scale = Vector2(0.544737, 0.544737)
-texture = ExtResource("3_pmy1c")
+texture = ExtResource("3_5f131")
 
 [node name="Chest" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("4_c8d6b")
+script = ExtResource("4_b1l47")
 player = NodePath("../Player")
 
 [node name="Area2D" type="Area2D" parent="Chest"]
@@ -272,85 +272,86 @@ shape = SubResource("RectangleShape2D_ygfd4")
 
 [node name="Chest" type="Sprite2D" parent="Chest/StaticBody2D"]
 position = Vector2(0, 27)
-texture = ExtResource("5_s6rxb")
+texture = ExtResource("5_op4cw")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/StaticBody2D"]
 position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_jh0ew")
 
-[node name="Alchemy2" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Alchemy" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-137, -73)
-script = ExtResource("6_6bmic")
+script = ExtResource("6_oeid3")
 player = NodePath("../Player")
-itemEntregue = ExtResource("7_vtvwo")
+itemEntregue = ExtResource("7_14qm4")
 
-[node name="Icon" type="Sprite2D" parent="Alchemy2"]
+[node name="Icon" type="Sprite2D" parent="Alchemy"]
 scale = Vector2(0.365234, 0.285156)
-texture = ExtResource("6_7amfn")
+texture = ExtResource("8_vwkn0")
 
-[node name="Area2D" type="Area2D" parent="Alchemy2"]
+[node name="Area2D" type="Area2D" parent="Alchemy"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemy2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemy/Area2D"]
 shape = SubResource("RectangleShape2D_h18a0")
 
-[node name="Armaduras" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Forge" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-77, -74)
-script = ExtResource("6_6bmic")
+script = ExtResource("6_oeid3")
 player = NodePath("../Player")
-itemEntregue = ExtResource("9_awcm5")
+itemEntregue = ExtResource("9_d7m6n")
 
-[node name="Icon" type="Sprite2D" parent="Armaduras"]
+[node name="Icon" type="Sprite2D" parent="Forge"]
 scale = Vector2(0.365234, 0.285156)
-texture = ExtResource("6_7amfn")
+texture = ExtResource("8_vwkn0")
 
-[node name="Area2D" type="Area2D" parent="Armaduras"]
+[node name="Area2D" type="Area2D" parent="Forge"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Armaduras/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Forge/Area2D"]
 shape = SubResource("RectangleShape2D_h18a0")
 
-[node name="Minigame1" type="Node2D" parent="."]
+[node name="Minigame" type="Node2D" parent="."]
+visible = false
 position = Vector2(-14, -35)
-script = ExtResource("10_n51i0")
+script = ExtResource("10_ce8cp")
 
-[node name="Quadrado3" type="Sprite2D" parent="Minigame1"]
+[node name="Quadrado3" type="Sprite2D" parent="Minigame"]
 position = Vector2(2, 0)
 scale = Vector2(1.75, 0.25)
-texture = ExtResource("10_13jr0")
+texture = ExtResource("11_87lbm")
 
-[node name="Verde" type="Sprite2D" parent="Minigame1"]
+[node name="Verde" type="Sprite2D" parent="Minigame"]
 modulate = Color(0, 0.647059, 0.294118, 1)
 position = Vector2(-10, -9.98378e-07)
 scale = Vector2(0.4375, 0.25)
-texture = ExtResource("10_13jr0")
+texture = ExtResource("11_87lbm")
 
-[node name="Area2D" type="Area2D" parent="Minigame1/Verde"]
+[node name="Area2D" type="Area2D" parent="Minigame/Verde"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame1/Verde/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/Verde/Area2D"]
 shape = SubResource("RectangleShape2D_6nm75")
 
-[node name="Azul" type="Sprite2D" parent="Minigame1"]
+[node name="Azul" type="Sprite2D" parent="Minigame"]
 modulate = Color(0.360784, 0.6, 0.988235, 1)
 position = Vector2(27.2203, 0)
 scale = Vector2(0.0861285, 0.401307)
-texture = ExtResource("10_13jr0")
+texture = ExtResource("11_87lbm")
 
-[node name="Area2D" type="Area2D" parent="Minigame1/Azul"]
+[node name="Area2D" type="Area2D" parent="Minigame/Azul"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame1/Azul/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/Azul/Area2D"]
 scale = Vector2(0.915, 1.07)
 shape = SubResource("RectangleShape2D_lbt0v")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Minigame1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Minigame"]
 libraries = {
 "": SubResource("AnimationLibrary_4y8sa")
 }
 
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Alchemy2/Area2D" to="Alchemy2" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Alchemy2/Area2D" to="Alchemy2" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Armaduras/Area2D" to="Armaduras" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Armaduras/Area2D" to="Armaduras" method="_on_area_2d_body_exited"]
-[connection signal="area_entered" from="Minigame1/Verde/Area2D" to="Minigame1" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Minigame1/Verde/Area2D" to="Minigame1" method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Alchemy/Area2D" to="Alchemy" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Alchemy/Area2D" to="Alchemy" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Forge/Area2D" to="Forge" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Forge/Area2D" to="Forge" method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="Minigame/Verde/Area2D" to="Minigame" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Minigame/Verde/Area2D" to="Minigame" method="_on_area_2d_area_exited"]
