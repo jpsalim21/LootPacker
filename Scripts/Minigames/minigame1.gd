@@ -8,17 +8,15 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("minigame") && near:
-		print("Acertou")
+func _process(_delta):
 	pass
 
 
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	near = true
 	pass # Replace with function body.
 	
-func _on_area_2d_area_exited(area):
+func _on_area_2d_area_exited(_area):
 	near = false
 	pass # Replace with function body.
