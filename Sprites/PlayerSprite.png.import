@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf0hxu0288um8"
-path="res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-29e56caff6215e6da859fd37fbc47d50.ctex"
+uid="uid://u70muouqpq3n"
+path="res://.godot/imported/PlayerSprite.png-d737c826d67a132e1f882c16f66bb72c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Small-8-Direction-Characters_by_AxulArt.png"
-dest_files=["res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-29e56caff6215e6da859fd37fbc47d50.ctex"]
+source_file="res://Sprites/PlayerSprite.png"
+dest_files=["res://.godot/imported/PlayerSprite.png-d737c826d67a132e1f882c16f66bb72c.ctex"]
 
 [params]
 
