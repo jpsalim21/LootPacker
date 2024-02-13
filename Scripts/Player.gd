@@ -8,8 +8,6 @@ var animation = ""
 @onready var itemSprite : Sprite2D = $ItemSprite
 var currentItem : ItemClass
 
-var escudo = "res://Items/Armadura.tres"
-
 func _ready():
 	pass
 
@@ -26,6 +24,10 @@ func update_animation():
 		animation = "Up"
 		if velocity.x != 0:
 			animation = "DiagonalUp"
+			if velocity.x < 0:
+				animatedSprite.flip_h = true
+			else:
+				animatedSprite.flip_h = false
 	elif velocity.y > 0:
 		animation = "Down"
 		if velocity.x > 0:
@@ -44,12 +46,13 @@ func update_animation():
 		animation = "Idle"
 	animatedSprite.play(animation)
 
-func changeItem(newItem : ItemClass):
+func changeItem(newItem: ItemClass):
 	currentItem = newItem
 	if(currentItem == null):
+		print("Trocou para nulo")
 		itemSprite.visible = false
 		itemSprite.texture = null
 	else:
-		currentItem.nome = newItem.nome
-		currentItem.sprite = newItem.sprite
-		currentItem.itemIndex = newItem.itemIndex
+		print("Novo item: " + newItem.nome)
+		itemSprite.visible = true
+		itemSprite.texture = currentItem.sprite
