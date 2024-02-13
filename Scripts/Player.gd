@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 100.0
+const SPEED = 60.0
 var directionVector = Vector2.ZERO
 var animation = ""
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -21,10 +21,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 func update_animation():
-	if velocity.y < 0 and velocity.x == 0:
+	if velocity.y < 0:
 		animation = "Up"
-	elif velocity.y > 0 and velocity.x == 0:
+		if velocity.x != 0:
+			animation = "DiagonalUp"
+	elif velocity.y > 0:
 		animation = "Down"
+		if velocity.x > 0:
+			animation = "DiagonalDown"
+			animatedSprite.flip_h = false
+		elif velocity.x < 0:
+			animation = "DiagonalDown"
+			animatedSprite.flip_h = true
 	elif velocity.x < 0:
 		animation = "Side"
 		animatedSprite.flip_h = true
