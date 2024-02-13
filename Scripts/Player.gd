@@ -11,8 +11,10 @@ var currentItem : ItemClass
 func _process(_delta):
 	if Input.is_action_just_pressed("run"):
 		SPEED += 40
+		animatedSprite.speed_scale = 1.5
 	elif Input.is_action_just_released("run") and SPEED == 100.0:
 		SPEED -= 40
+		animatedSprite.speed_scale = 1
 	update_animation()
 
 func _physics_process(_delta):
