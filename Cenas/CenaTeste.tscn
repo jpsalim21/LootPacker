@@ -331,7 +331,7 @@ shape = SubResource("RectangleShape2D_6nm75")
 
 [node name="Azul" type="Sprite2D" parent="Minigame1"]
 modulate = Color(0.360784, 0.6, 0.988235, 1)
-position = Vector2(-10.6655, 0)
+position = Vector2(27.2203, 0)
 scale = Vector2(0.0861285, 0.401307)
 texture = ExtResource("10_13jr0")
 
