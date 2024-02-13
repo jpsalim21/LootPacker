@@ -1,17 +1,15 @@
 extends CharacterBody2D
+class_name Player
 
 const SPEED = 100.0
 var directionVector = Vector2.ZERO
 var animation = ""
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var itemSprite : Sprite2D = $ItemSprite
-var itemAtual : ItemClass
+var currentItem : ItemClass
 
 func _ready():
-	itemAtual = ItemClass.new()
-	itemAtual.nome = "shield"
-	itemAtual.sprite = itemSprite.texture
-	itemAtual.itemIndex = 0
+
 	pass
 
 func _process(delta):
@@ -37,11 +35,12 @@ func update_animation():
 		animation = "Idle"
 	animatedSprite.play(animation)
 
-func trocaItem(novoItem):
-	itemAtual = novoItem
-	if(itemAtual == null):
+func changeItem(newItem):
+	currentItem = newItem
+	if(currentItem == null):
 		itemSprite.visible = false
 		itemSprite.texture = null
 	else:
-		print(itemAtual.nome)
-	pass
+		currentItem.nome = newItem.nome
+		currentItem.sprite = newItem.sprite
+		currentItem.itemIndex = newItem.itemIndex
