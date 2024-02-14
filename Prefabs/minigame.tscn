@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1o062afx8mr"]
+
+[ext_resource type="Script" path="res://Scripts/Minigames/minigame.gd" id="1_qvq2d"]
+[ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="2_5cjk3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nm75"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbt0v"]
+size = Vector2(34.8317, 29.9023)
+
+[sub_resource type="Animation" id="Animation_sk2uu"]
+resource_name = "minigame1"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Azul:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-25, 0), Vector2(29, 0), Vector2(-25, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4y8sa"]
+_data = {
+"minigame1": SubResource("Animation_sk2uu")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmhps"]
+bg_color = Color(0.219608, 0.85098, 0.160784, 1)
+
+[node name="Minigame" type="Node2D"]
+position = Vector2(55, 47)
+script = ExtResource("1_qvq2d")
+
+[node name="Quadrado3" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(1.75, 0.25)
+texture = ExtResource("2_5cjk3")
+
+[node name="Verde" type="Sprite2D" parent="."]
+modulate = Color(0, 0.647059, 0.294118, 1)
+position = Vector2(1, -9.98378e-07)
+scale = Vector2(0.4375, 0.25)
+texture = ExtResource("2_5cjk3")
+
+[node name="Area2D" type="Area2D" parent="Verde"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Verde/Area2D"]
+shape = SubResource("RectangleShape2D_6nm75")
+
+[node name="Azul" type="Sprite2D" parent="."]
+modulate = Color(0.360784, 0.6, 0.988235, 1)
+position = Vector2(-25, 0)
+scale = Vector2(0.0861285, 0.401307)
+texture = ExtResource("2_5cjk3")
+
+[node name="Area2D" type="Area2D" parent="Azul"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Azul/Area2D"]
+scale = Vector2(0.915, 1.07)
+shape = SubResource("RectangleShape2D_lbt0v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4y8sa")
+}
+autoplay = "minigame1"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -29.0
+offset_top = -12.0
+offset_right = 34.0
+offset_bottom = -8.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_pmhps")
+value = 41.83
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.68, 3.68)
+
+[connection signal="area_entered" from="Verde/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Verde/Area2D" to="." method="_on_area_2d_area_exited"]

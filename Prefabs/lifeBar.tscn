@@ -10,11 +10,11 @@ bg_color = Color(0.541176, 0.541176, 0.541176, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbcw5"]
 bg_color = Color(0, 0, 0, 0.32549)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxxe0"]
+bg_color = Color(0.0392157, 0.866667, 0.941176, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lk3eh"]
 bg_color = Color(0.227451, 0.690196, 0.235294, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw6lo"]
-bg_color = Color(0.407843, 0.819608, 0.890196, 1)
 
 [sub_resource type="Theme" id="Theme_amxe1"]
 
@@ -31,25 +31,36 @@ max = 50.0
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_right = 197.0
-offset_bottom = 186.0
+offset_right = 152.0
+offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_di8kc")
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel"]
-z_index = 1
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.264
-anchor_top = 0.51
-anchor_right = 0.93
-anchor_bottom = 0.581
-offset_left = 0.00799942
-offset_top = 0.0599899
-offset_right = -0.0500183
-offset_bottom = 0.0309753
+offset_left = 45.0
+offset_top = 114.0
+offset_right = 144.0
+offset_bottom = 125.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_bbcw5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gxxe0")
+max_value = 1.0
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+offset_left = 46.0
+offset_top = 81.0
+offset_right = 145.0
+offset_bottom = 92.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_bbcw5")
@@ -58,70 +69,37 @@ max_value = 1.0
 value = 0.76
 show_percentage = false
 
-[node name="ProgressBar2" type="ProgressBar" parent="Panel"]
+[node name="PerfilPersonagem" type="TextureRect" parent="."]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.264
-anchor_top = 0.66
-anchor_right = 0.93
-anchor_bottom = 0.721
-offset_left = 0.00799942
-offset_top = -0.0400085
-offset_right = -0.0500183
-offset_bottom = -0.0789871
+offset_left = 45.0
+offset_top = 7.0
+offset_right = 100.0
+offset_bottom = 62.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_bbcw5")
-theme_override_styles/fill = SubResource("StyleBoxFlat_rw6lo")
-max_value = 1.0
-value = 0.76
-show_percentage = false
-
-[node name="PerfilPersonagem" type="TextureRect" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.305
-anchor_top = 0.081
-anchor_right = 0.61
-anchor_bottom = 0.402
-offset_left = 4.915
-offset_top = -1.066
-offset_right = 4.38999
-offset_bottom = -1.33998
-grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("2_bto6a")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Panel"]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.048
-anchor_top = 0.454
-anchor_right = 0.206
-anchor_bottom = 0.615
-offset_left = 1.16
-offset_top = -0.076004
-offset_right = 0.325964
-offset_bottom = 0.0799713
+offset_left = 7.0
+offset_top = 71.0
+offset_right = 40.0
+offset_bottom = 103.0
 grow_vertical = 0
 texture = ExtResource("3_6m2bg")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.411765, 0.803922, 1, 1)
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.054
-anchor_top = 0.629
-anchor_right = 0.225
-anchor_bottom = 0.811
-offset_left = -0.0700006
-offset_top = -0.026001
-offset_right = 0.0750122
-offset_bottom = -0.044014
+offset_left = 10.0
+offset_top = 108.0
+offset_right = 37.0
+offset_bottom = 135.0
 grow_vertical = 0
 theme = SubResource("Theme_amxe1")
 texture = ExtResource("2_bto6a")
-expand_mode = 1

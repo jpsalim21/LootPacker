@@ -17,18 +17,18 @@ layout_mode = 1
 offset_left = 18.0
 offset_top = 16.0
 offset_right = -930.0
-offset_bottom = -438.0
+offset_bottom = -475.0
 
 [node name="LifeBar2" parent="Control" instance=ExtResource("1_om7wy")]
 layout_mode = 1
-offset_left = 241.0
-offset_top = 17.0
-offset_right = -707.0
-offset_bottom = -437.0
+offset_left = 194.0
+offset_top = 18.0
+offset_right = -754.0
+offset_bottom = -436.0
 
 [node name="LifeBar3" parent="Control" instance=ExtResource("1_om7wy")]
 layout_mode = 1
-offset_left = 457.0
-offset_top = 18.0
-offset_right = -491.0
-offset_bottom = -436.0
+offset_left = 372.0
+offset_top = 17.0
+offset_right = -576.0
+offset_bottom = -437.0

@@ -3,7 +3,7 @@ extends Node
 @export var max : float
 var atual : float 
 
-@onready var barra : ProgressBar = $Panel/ProgressBar
+@onready var barra : ProgressBar = $ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
