@@ -283,7 +283,7 @@ shape = SubResource("RectangleShape2D_jh0ew")
 position = Vector2(-137, -73)
 script = ExtResource("6_oeid3")
 player = NodePath("../Player")
-itemEntregue = ExtResource("7_14qm4")
+deliveredItem = ExtResource("7_14qm4")
 
 [node name="Icon" type="Sprite2D" parent="Alchemy"]
 scale = Vector2(0.365234, 0.285156)
@@ -298,7 +298,7 @@ shape = SubResource("RectangleShape2D_h18a0")
 position = Vector2(-77, -74)
 script = ExtResource("6_oeid3")
 player = NodePath("../Player")
-itemEntregue = ExtResource("9_d7m6n")
+deliveredItem = ExtResource("9_d7m6n")
 
 [node name="Icon" type="Sprite2D" parent="Forge"]
 scale = Vector2(0.365234, 0.285156)
