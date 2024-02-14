@@ -60,3 +60,4 @@ func changeItem(newItem: ItemClass):
 		print("Novo item: " + newItem.nome)
 		itemSprite.visible = true
 		itemSprite.texture = currentItem.sprite
+
