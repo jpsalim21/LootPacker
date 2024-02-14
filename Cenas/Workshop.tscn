@@ -283,7 +283,7 @@ texture = ExtResource("8_vwkn0")
 shape = SubResource("RectangleShape2D_h18a0")
 
 [node name="Minigame" parent="." instance=ExtResource("10_8ysgi")]
-position = Vector2(-7, -20)
+position = Vector2(65, -35)
 
 [node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
 

@@ -81,8 +81,5 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_pmhps")
 value = 41.83
 show_percentage = false
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.68, 3.68)
-
 [connection signal="area_entered" from="Verde/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Verde/Area2D" to="." method="_on_area_2d_area_exited"]

@@ -28,8 +28,9 @@ func _process(_delta):
 			acertou(1)
 		else:
 			acertou(-1)
-	progressoAtual += _delta
-	barraProgresso.value = progressoAtual
+	if(progressoAtual < progressoMax):
+		progressoAtual += _delta
+		barraProgresso.value = progressoAtual
 	pass
 
 func acertou(i : int):
@@ -48,10 +49,8 @@ func acertou(i : int):
 		animationSpeed = 1
 		animador.speed_scale = animationSpeed
 
+# Funções da área
 func _on_area_2d_area_entered(_area):
 	near = true
-	pass # Replace with function body.
-	
 func _on_area_2d_area_exited(_area):
 	near = false
-	pass # Replace with function body.
