@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://ciuiacrc0qpg8" path="res://Items/armor.tres" id="9_d7m6n"]
 [ext_resource type="Script" path="res://Scripts/Minigames/minigame.gd" id="10_ce8cp"]
 [ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="11_87lbm"]
-[ext_resource type="PackedScene" uid="uid://c1ivkp73agnyx" path="res://Prefabs/lifeBar.tscn" id="12_yutp4"]
+[ext_resource type="PackedScene" uid="uid://dmwu66isp4wy8" path="res://Prefabs/UI.tscn" id="12_0qqpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
 size = Vector2(11, 5)
@@ -282,7 +282,7 @@ position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_jh0ew")
 
 [node name="Alchemy" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(-137, -30)
+position = Vector2(-135, -17)
 script = ExtResource("6_oeid3")
 player = NodePath("../Player")
 itemEntregue = ExtResource("7_14qm4")
@@ -297,7 +297,7 @@ texture = ExtResource("8_vwkn0")
 shape = SubResource("RectangleShape2D_h18a0")
 
 [node name="Forge" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(-76, -29)
+position = Vector2(-74, -18)
 script = ExtResource("6_oeid3")
 player = NodePath("../Player")
 itemEntregue = ExtResource("9_d7m6n")
@@ -349,11 +349,7 @@ libraries = {
 "": SubResource("AnimationLibrary_4y8sa")
 }
 
-[node name="LifeBar" parent="." instance=ExtResource("12_yutp4")]
-offset_left = -163.0
-offset_top = -90.0
-offset_right = -163.0
-offset_bottom = -90.0
+[node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
 
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]

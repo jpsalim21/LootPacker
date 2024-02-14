@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmwu66isp4wy8"]
+
+[ext_resource type="PackedScene" uid="uid://c1ivkp73agnyx" path="res://Prefabs/lifeBar.tscn" id="1_om7wy"]
+
+[node name="Ui" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LifeBar" parent="Control" instance=ExtResource("1_om7wy")]
+layout_mode = 1
+offset_left = 18.0
+offset_top = 16.0
+offset_right = -930.0
+offset_bottom = -438.0
+
+[node name="LifeBar2" parent="Control" instance=ExtResource("1_om7wy")]
+layout_mode = 1
+offset_left = 241.0
+offset_top = 17.0
+offset_right = -707.0
+offset_bottom = -437.0
+
+[node name="LifeBar3" parent="Control" instance=ExtResource("1_om7wy")]
+layout_mode = 1
+offset_left = 457.0
+offset_top = 18.0
+offset_right = -491.0
+offset_bottom = -436.0
