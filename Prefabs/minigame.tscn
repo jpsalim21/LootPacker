@@ -16,7 +16,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Azul:position")
+tracks/0/path = NodePath("minigameBarra/Azul:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,31 +38,39 @@ bg_color = Color(0.219608, 0.85098, 0.160784, 1)
 position = Vector2(55, 47)
 script = ExtResource("1_qvq2d")
 
-[node name="Quadrado3" type="Sprite2D" parent="."]
+[node name="minigameBarra" type="Node2D" parent="."]
+
+[node name="Quadrado3" type="Sprite2D" parent="minigameBarra"]
+visibility_layer = 2
+z_index = 2
 position = Vector2(2, 0)
-scale = Vector2(1.75, 0.25)
+scale = Vector2(1.75, 0.15625)
 texture = ExtResource("2_5cjk3")
 
-[node name="Verde" type="Sprite2D" parent="."]
+[node name="Verde" type="Sprite2D" parent="minigameBarra"]
 modulate = Color(0, 0.647059, 0.294118, 1)
-position = Vector2(1, -9.98378e-07)
-scale = Vector2(0.4375, 0.25)
+visibility_layer = 2
+z_index = 2
+position = Vector2(1, 0)
+scale = Vector2(0.4375, 0.15625)
 texture = ExtResource("2_5cjk3")
 
-[node name="Area2D" type="Area2D" parent="Verde"]
+[node name="Area2D" type="Area2D" parent="minigameBarra/Verde"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Verde/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigameBarra/Verde/Area2D"]
 shape = SubResource("RectangleShape2D_6nm75")
 
-[node name="Azul" type="Sprite2D" parent="."]
+[node name="Azul" type="Sprite2D" parent="minigameBarra"]
 modulate = Color(0.360784, 0.6, 0.988235, 1)
+visibility_layer = 2
+z_index = 2
 position = Vector2(-25, 0)
-scale = Vector2(0.0861285, 0.401307)
+scale = Vector2(0.0861285, 0.240952)
 texture = ExtResource("2_5cjk3")
 
-[node name="Area2D" type="Area2D" parent="Azul"]
+[node name="AzulArea" type="Area2D" parent="minigameBarra/Azul"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Azul/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigameBarra/Azul/AzulArea"]
 scale = Vector2(0.915, 1.07)
 shape = SubResource("RectangleShape2D_lbt0v")
 
@@ -81,5 +89,5 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_pmhps")
 value = 41.83
 show_percentage = false
 
-[connection signal="area_entered" from="Verde/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Verde/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="minigameBarra/Verde/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="minigameBarra/Verde/Area2D" to="." method="_on_area_2d_area_exited"]

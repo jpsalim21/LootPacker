@@ -1,8 +1,12 @@
+class_name Minigame
 extends Node
 
-@onready var objetoVerde = $Verde
+@onready var objetoVerde = $minigameBarra/Verde
 @onready var animador : AnimationPlayer = $AnimationPlayer
 @onready var barraProgresso : ProgressBar = $ProgressBar
+@onready var nodeMinigame : Node2D = $minigameBarra
+
+@export var workStation : WorkStation
 
 var near : bool = false
 var pontuacao : int = 0
@@ -15,14 +19,18 @@ var animationSpeed : float = 1.0
 @export var progressoMax : float = 50
 var progressoAtual : float = 0
 
-# Called when the node enters the scene tree for the first time.
+var ocorrendo : bool = false
+
+
 func _ready():
+	nodeMinigame.visible = false
 	barraProgresso.max_value = progressoMax
+	barraProgresso.value = 0
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if not ocorrendo:
+		return #Se o player estiver longe, a barra não progride
 	if Input.is_action_just_pressed("minigame"):
 		if near:
 			acertou(1)
@@ -31,7 +39,14 @@ func _process(_delta):
 	if(progressoAtual < progressoMax):
 		progressoAtual += _delta
 		barraProgresso.value = progressoAtual
-	pass
+	else:
+		barraProgresso.value = 0
+		progressoAtual = 0
+		animationSpeed = 1
+		animador.speed_scale = animationSpeed
+		ocorrendo = false
+		workStation.terminouMinigame()
+		comecarESair(false)
 
 func acertou(i : int):
 	pontuacao += i
@@ -48,9 +63,17 @@ func acertou(i : int):
 		barraProgresso.value = progressoAtual
 		animationSpeed = 1
 		animador.speed_scale = animationSpeed
+		
+func comecarESair(boleana : bool):
+	ocorrendo = boleana
+	nodeMinigame.visible = boleana
 
-# Funções da área
-func _on_area_2d_area_entered(_area):
-	near = true
-func _on_area_2d_area_exited(_area):
-	near = false
+#Verificam se a parte verde toca na azul
+func _on_area_2d_area_entered(area):
+	if area.name == "AzulArea":
+		near = true
+	pass # Replace with function body.
+func _on_area_2d_area_exited(area):
+	if area.name == "AzulArea":
+		near = false
+	pass # Replace with function body.

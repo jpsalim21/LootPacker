@@ -6,7 +6,7 @@ var directionVector = Vector2.ZERO
 var animation = ""
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var itemSprite : Sprite2D = $ItemSprite
-var currentItem : ItemClass
+@export var currentItem : ItemClass
 
 func _process(_delta):
 	if Input.is_action_just_pressed("run"):

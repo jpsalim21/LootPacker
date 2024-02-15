@@ -1,15 +1,16 @@
-[gd_scene load_steps=38 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=40 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1pfsu"]
+[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Items/ruby.tres" id="2_halj0"]
 [ext_resource type="Texture2D" uid="uid://u70muouqpq3n" path="res://Sprites/PlayerSprite.png" id="2_u0rb3"]
-[ext_resource type="Texture2D" uid="uid://djyk8x0o7mfju" path="res://Sprites/Itens/armor.png" id="3_5f131"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_b1l47"]
+[ext_resource type="Texture2D" uid="uid://0cklxrigb2ga" path="res://Sprites/Itens/Cut Ruby.png" id="4_qb24r"]
 [ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_op4cw"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/WorkstationScript.gd" id="6_oeid3"]
 [ext_resource type="Resource" uid="uid://cmfqrjr5nm6fm" path="res://Items/healingPotion.tres" id="7_14qm4"]
-[ext_resource type="Texture2D" uid="uid://cs81tpytrike2" path="res://Sprites/icon.svg" id="8_vwkn0"]
-[ext_resource type="Resource" uid="uid://ciuiacrc0qpg8" path="res://Items/armor.tres" id="9_d7m6n"]
+[ext_resource type="Texture2D" uid="uid://b4k8xmbplm35j" path="res://Sprites/Estruturas/Cenario1.png" id="8_76o45"]
 [ext_resource type="PackedScene" uid="uid://c1o062afx8mr" path="res://Prefabs/minigame.tscn" id="10_8ysgi"]
+[ext_resource type="PackedScene" uid="uid://c2btuki0bxjpy" path="res://Prefabs/Caldeirao.tscn" id="11_vpkt5"]
 [ext_resource type="PackedScene" uid="uid://dmwu66isp4wy8" path="res://Prefabs/UI.tscn" id="12_0qqpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
@@ -204,6 +205,9 @@ size = Vector2(14, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h18a0"]
 size = Vector2(47.5, 36.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjgnn"]
+size = Vector2(19, 15)
+
 [node name="Cena" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -213,6 +217,7 @@ process_callback = 0
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(-97, -3)
 script = ExtResource("1_1pfsu")
+currentItem = ExtResource("2_halj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-0.5, 6.5)
@@ -228,7 +233,7 @@ autoplay = "IdleDown"
 z_index = 1
 position = Vector2(0, -12)
 scale = Vector2(0.544737, 0.544737)
-texture = ExtResource("3_5f131")
+texture = ExtResource("4_qb24r")
 
 [node name="Chest" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-1, 40)
@@ -252,44 +257,40 @@ hframes = 4
 position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_jh0ew")
 
-[node name="Alchemy" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(-135, -29)
+[node name="Alchemy" type="Node2D" parent="." node_paths=PackedStringArray("player", "minigame")]
+position = Vector2(-133, -16)
 script = ExtResource("6_oeid3")
 player = NodePath("../Player")
 itemEntregue = ExtResource("7_14qm4")
+minigame = NodePath("Minigame")
 
 [node name="Icon" type="Sprite2D" parent="Alchemy"]
-scale = Vector2(0.365234, 0.285156)
-texture = ExtResource("8_vwkn0")
+z_index = -1
+texture = ExtResource("8_76o45")
 
 [node name="Area2D" type="Area2D" parent="Alchemy"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemy/Area2D"]
 shape = SubResource("RectangleShape2D_h18a0")
 
-[node name="Forge" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(-74, -28)
-script = ExtResource("6_oeid3")
-player = NodePath("../Player")
-itemEntregue = ExtResource("9_d7m6n")
+[node name="Minigame" parent="Alchemy" node_paths=PackedStringArray("workStation") instance=ExtResource("10_8ysgi")]
+position = Vector2(0, -11)
+workStation = NodePath("..")
 
-[node name="Icon" type="Sprite2D" parent="Forge"]
-scale = Vector2(0.365234, 0.285156)
-texture = ExtResource("8_vwkn0")
+[node name="StaticBody2D" type="StaticBody2D" parent="Alchemy"]
 
-[node name="Area2D" type="Area2D" parent="Forge"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Forge/Area2D"]
-shape = SubResource("RectangleShape2D_h18a0")
-
-[node name="Minigame" parent="." instance=ExtResource("10_8ysgi")]
-position = Vector2(65, -35)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemy/StaticBody2D"]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_wjgnn")
 
 [node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
+
+[node name="Caldeirao" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_vpkt5")]
+position = Vector2(-69, -16)
+itemResultante = ExtResource("7_14qm4")
+player = NodePath("../Player")
 
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Alchemy/Area2D" to="Alchemy" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Alchemy/Area2D" to="Alchemy" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Forge/Area2D" to="Forge" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Forge/Area2D" to="Forge" method="_on_area_2d_body_exited"]
