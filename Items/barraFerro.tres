@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemClass" load_steps=3 format=3 uid="uid://b8nodw5g0xack"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/ItemClass.gd" id="1_d8l8e"]
+[ext_resource type="Texture2D" uid="uid://dtlplou0hd7cb" path="res://Sprites/Itens/Silver Ingot.png" id="2_fpxge"]
+
+[resource]
+script = ExtResource("1_d8l8e")
+sprite = ExtResource("2_fpxge")
+itemIndex = 0
+nome = ""

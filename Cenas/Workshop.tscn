@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=44 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1pfsu"]
 [ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Items/ruby.tres" id="2_halj0"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dmwu66isp4wy8" path="res://Prefabs/UI.tscn" id="12_0qqpj"]
 [ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Items/madeira.tres" id="12_rkcy8"]
 [ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="13_8sgd7"]
+[ext_resource type="PackedScene" uid="uid://dsb3v6hphb420" path="res://Prefabs/Fornalha.tscn" id="14_f4wes"]
+[ext_resource type="Resource" uid="uid://m67wulwr0b1g" path="res://Items/minerioFerro.tres" id="15_7elkp"]
+[ext_resource type="Resource" uid="uid://b8nodw5g0xack" path="res://Items/barraFerro.tres" id="16_5qsdj"]
+[ext_resource type="PackedScene" uid="uid://7o4s31xwqeqr" path="res://Prefabs/MesaEncantamento.tscn" id="17_l06ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
 size = Vector2(11, 5)
@@ -257,13 +261,13 @@ shape = SubResource("RectangleShape2D_jh0ew")
 
 [node name="Forja" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_jul0y")]
 player = NodePath("../Player")
-itemReceita = ExtResource("12_rkcy8")
+itemReceita = ExtResource("16_5qsdj")
 
 [node name="Caldeirao" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_vpkt5")]
 position = Vector2(-69, -16)
 itemResultante = ExtResource("7_14qm4")
 player = NodePath("../Player")
-tempoMax = 12.0
+tempoMax = 15.0
 
 [node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
 follow_viewport_scale = -1.075
@@ -271,6 +275,11 @@ follow_viewport_scale = -1.075
 [node name="Fornecedor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
 position = Vector2(-135, 60)
 itemEntregar = ExtResource("2_halj0")
+player = NodePath("../Player")
+
+[node name="Fornecedor3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
+position = Vector2(125, 58)
+itemEntregar = ExtResource("15_7elkp")
 player = NodePath("../Player")
 
 [node name="Fornecedor2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
@@ -292,6 +301,17 @@ z_index = -2
 position = Vector2(-3.5, 21.5)
 scale = Vector2(11.2188, 4.53125)
 texture = ExtResource("13_8sgd7")
+
+[node name="Fornalha" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_f4wes")]
+position = Vector2(-17, -16)
+ingrediente = ExtResource("15_7elkp")
+itemResultante = ExtResource("16_5qsdj")
+player = NodePath("../Player")
+tempoMax = 10.0
+
+[node name="MesaEncantamento" parent="." node_paths=PackedStringArray("player") instance=ExtResource("17_l06ur")]
+position = Vector2(32, -17)
+player = NodePath("../Player")
 
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]

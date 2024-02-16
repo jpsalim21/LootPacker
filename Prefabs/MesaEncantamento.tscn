@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://7o4s31xwqeqr"]
+
+[ext_resource type="Script" path="res://Scripts/Estruturas/Caldeirao.gd" id="1_xgrim"]
+[ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Items/madeira.tres" id="2_d3ehx"]
+[ext_resource type="Resource" uid="uid://o6nmv1h1xik1" path="res://Items/cajado.tres" id="3_enqul"]
+[ext_resource type="Texture2D" uid="uid://d1hk3wkcbflci" path="res://Sprites/Estruturas/Cenario3.png" id="3_l155n"]
+[ext_resource type="Texture2D" uid="uid://csn85e7wouhg2" path="res://Sprites/UI/Alarme.png" id="4_avnyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqkik"]
+size = Vector2(26, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anosy"]
+size = Vector2(37, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouvci"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_630r2"]
+bg_color = Color(0.105882, 0.729412, 0.0941176, 1)
+
+[sub_resource type="Animation" id="Animation_nmpca"]
+resource_name = "Aviso"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.137616, 0.591842),
+"transitions": PackedFloat32Array(36.7584, 1, 30.91),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wfqq5"]
+_data = {
+"Aviso": SubResource("Animation_nmpca")
+}
+
+[node name="MesaEncantamento" type="Node2D"]
+script = ExtResource("1_xgrim")
+ingrediente = ExtResource("2_d3ehx")
+itemResultante = ExtResource("3_enqul")
+tempoMax = 20.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_aqkik")
+
+[node name="Cenario2" type="Sprite2D" parent="."]
+texture = ExtResource("3_l155n")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_anosy")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -21.0
+offset_top = -17.0
+offset_right = 21.0
+offset_bottom = -12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ouvci")
+theme_override_styles/fill = SubResource("StyleBoxFlat_630r2")
+value = 4.54
+show_percentage = false
+
+[node name="Alarme" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.13687e-13, -18)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("4_avnyj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Alarme"]
+libraries = {
+"": SubResource("AnimationLibrary_wfqq5")
+}
+autoplay = "Aviso"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
