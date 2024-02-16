@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemClass" load_steps=3 format=3 uid="uid://cyiu28dq26mco"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/ItemClass.gd" id="1_rwvdf"]
+[ext_resource type="Texture2D" uid="uid://j4us1r2d52ch" path="res://Sprites/Itens/sword.png" id="2_jbsma"]
+
+[resource]
+script = ExtResource("1_rwvdf")
+sprite = ExtResource("2_jbsma")
+itemIndex = 3
+nome = "Espada"

@@ -24,27 +24,27 @@ func _physics_process(_delta):
 	
 
 func update_animation():
-	if velocity.y < 0:
+	if directionVector.y < -0.5:
 		animation = "Up"
-		if velocity.x != 0:
+		if directionVector.x > 0.5 or directionVector.x < -0.5:
 			animation = "DiagonalUp"
-			if velocity.x > 0:
+			if directionVector.x > 0:
 				animatedSprite.flip_h = false
 			else:
 				animatedSprite.flip_h = true
-	elif velocity.y > 0:
+	elif directionVector.y > 0.5:
 		animation = "Down"
-		if velocity.x != 0:
+		if directionVector.x > 0.5 or directionVector.x < -0.5:
 			animation = "DiagonalDown"
-			if velocity.x > 0:
+			if directionVector.x > 0:
 				animatedSprite.flip_h = false
 			else:
 				animatedSprite.flip_h = true
-	elif velocity.x != 0:
+	elif directionVector.x != 0:
 		animation = "Side"
-		if velocity.x > 0:
+		if directionVector.x > 0:
 			animatedSprite.flip_h = false
-		elif velocity.x < 0:
+		elif directionVector.x < 0:
 			animatedSprite.flip_h = true
 	else:
 		animation = "IdleDown"

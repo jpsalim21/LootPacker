@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1o062afx8mr"]
+[gd_scene load_steps=11 format=3 uid="uid://c1o062afx8mr"]
 
 [ext_resource type="Script" path="res://Scripts/Minigames/minigame.gd" id="1_qvq2d"]
 [ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="2_5cjk3"]
+[ext_resource type="AudioStream" uid="uid://5g8t405f3kq8" path="res://Sounds/Retro4.wav" id="3_p35bw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nm75"]
 size = Vector2(32, 32)
@@ -33,6 +34,27 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmhps"]
 bg_color = Color(0.219608, 0.85098, 0.160784, 1)
+
+[sub_resource type="Animation" id="Animation_aoar3"]
+resource_name = "acerto"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("minigameBarra:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmqfe"]
+_data = {
+"acerto": SubResource("Animation_aoar3")
+}
 
 [node name="Minigame" type="Node2D"]
 position = Vector2(55, 47)
@@ -88,6 +110,14 @@ offset_bottom = -8.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_pmhps")
 value = 41.83
 show_percentage = false
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lmqfe")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p35bw")
 
 [connection signal="area_entered" from="minigameBarra/Verde/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="minigameBarra/Verde/Area2D" to="." method="_on_area_2d_area_exited"]
