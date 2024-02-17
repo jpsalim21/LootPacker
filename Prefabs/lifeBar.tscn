@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1ivkp73agnyx"]
+[gd_scene load_steps=10 format=3 uid="uid://c1ivkp73agnyx"]
 
 [ext_resource type="Script" path="res://Scripts/Aventureiros/lifeBarScript.gd" id="1_rnqbl"]
 [ext_resource type="Texture2D" uid="uid://chka14hknvrox" path="res://Sprites/UI/Quadrado1.png" id="2_bto6a"]
+[ext_resource type="Resource" uid="uid://0o5bc3o72yki" path="res://Classes/Aventureiros/Guerreiro.tres" id="2_v6c0p"]
 [ext_resource type="Texture2D" uid="uid://ckof1hopgrdy2" path="res://Sprites/UI/Heart.png" id="3_6m2bg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di8kc"]
@@ -23,9 +24,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1000.0
+offset_bottom = -505.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rnqbl")
+aventureiro = ExtResource("2_v6c0p")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -68,19 +72,32 @@ max_value = 1.0
 value = 0.76
 show_percentage = false
 
+[node name="Tipo" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+offset_left = 80.0
+offset_top = 6.0
+offset_right = 135.0
+offset_bottom = 61.0
+grow_horizontal = 2
+texture = ExtResource("2_bto6a")
+expand_mode = 1
+
 [node name="PerfilPersonagem" type="TextureRect" parent="."]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-offset_left = 45.0
-offset_top = 7.0
-offset_right = 100.0
-offset_bottom = 62.0
+offset_left = 22.0
+offset_top = 6.0
+offset_right = 77.0
+offset_bottom = 61.0
 grow_horizontal = 2
 texture = ExtResource("2_bto6a")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 offset_left = 7.0

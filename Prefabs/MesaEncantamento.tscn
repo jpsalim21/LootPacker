@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://7o4s31xwqeqr"]
 
 [ext_resource type="Script" path="res://Scripts/Estruturas/Caldeirao.gd" id="1_xgrim"]
-[ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Items/madeira.tres" id="2_d3ehx"]
-[ext_resource type="Resource" uid="uid://o6nmv1h1xik1" path="res://Items/cajado.tres" id="3_enqul"]
+[ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Classes/Items/madeira.tres" id="2_d3ehx"]
+[ext_resource type="Resource" uid="uid://o6nmv1h1xik1" path="res://Classes/Items/cajado.tres" id="3_enqul"]
 [ext_resource type="Texture2D" uid="uid://d1hk3wkcbflci" path="res://Sprites/Estruturas/Cenario3.png" id="3_l155n"]
 [ext_resource type="Texture2D" uid="uid://csn85e7wouhg2" path="res://Sprites/UI/Alarme.png" id="4_avnyj"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dsb3v6hphb420"]
 
 [ext_resource type="Script" path="res://Scripts/Estruturas/Caldeirao.gd" id="1_svnfq"]
-[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Items/ruby.tres" id="2_qxbro"]
+[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Classes/Items/ruby.tres" id="2_qxbro"]
 [ext_resource type="Texture2D" uid="uid://jgnbp5ei85x" path="res://Sprites/Estruturas/Cenario5.png" id="3_vqvl6"]
 [ext_resource type="Texture2D" uid="uid://csn85e7wouhg2" path="res://Sprites/UI/Alarme.png" id="4_dlaco"]
 

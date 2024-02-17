@@ -1,22 +1,24 @@
-[gd_scene load_steps=44 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=49 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1pfsu"]
-[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Items/ruby.tres" id="2_halj0"]
+[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Classes/Items/ruby.tres" id="2_halj0"]
 [ext_resource type="Texture2D" uid="uid://u70muouqpq3n" path="res://Sprites/PlayerSprite.png" id="2_u0rb3"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_b1l47"]
 [ext_resource type="Texture2D" uid="uid://0cklxrigb2ga" path="res://Sprites/Itens/Cut Ruby.png" id="4_qb24r"]
 [ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_op4cw"]
-[ext_resource type="Resource" uid="uid://cmfqrjr5nm6fm" path="res://Items/healingPotion.tres" id="7_14qm4"]
 [ext_resource type="PackedScene" uid="uid://cs5cj2tivci1w" path="res://Prefabs/forja.tscn" id="7_jul0y"]
+[ext_resource type="Resource" uid="uid://lh1xtmcxbbfb" path="res://Classes/Items/pocao.tres" id="11_dmwo6"]
 [ext_resource type="PackedScene" uid="uid://btglo5338k5op" path="res://Prefabs/Fornecedor.tscn" id="11_k2e5d"]
 [ext_resource type="PackedScene" uid="uid://c2btuki0bxjpy" path="res://Prefabs/Caldeirao.tscn" id="11_vpkt5"]
 [ext_resource type="PackedScene" uid="uid://dmwu66isp4wy8" path="res://Prefabs/UI.tscn" id="12_0qqpj"]
-[ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Items/madeira.tres" id="12_rkcy8"]
+[ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Classes/Items/madeira.tres" id="12_rkcy8"]
 [ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="13_8sgd7"]
 [ext_resource type="PackedScene" uid="uid://dsb3v6hphb420" path="res://Prefabs/Fornalha.tscn" id="14_f4wes"]
-[ext_resource type="Resource" uid="uid://m67wulwr0b1g" path="res://Items/minerioFerro.tres" id="15_7elkp"]
-[ext_resource type="Resource" uid="uid://b8nodw5g0xack" path="res://Items/barraFerro.tres" id="16_5qsdj"]
+[ext_resource type="Resource" uid="uid://m67wulwr0b1g" path="res://Classes/Items/minerioFerro.tres" id="15_7elkp"]
+[ext_resource type="Resource" uid="uid://b8nodw5g0xack" path="res://Classes/Items/barraFerro.tres" id="16_5qsdj"]
 [ext_resource type="PackedScene" uid="uid://7o4s31xwqeqr" path="res://Prefabs/MesaEncantamento.tscn" id="17_l06ur"]
+[ext_resource type="Texture2D" uid="uid://bvsvvtrs07oqa" path="res://Sprites/Tileset/TX Tileset Stone Ground.png" id="18_bftj5"]
+[ext_resource type="Texture2D" uid="uid://c8gx0h65k5nhl" path="res://Sprites/Tileset/TX Tileset Wall.png" id="19_fpv2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvt4o"]
 size = Vector2(11, 5)
@@ -210,7 +212,284 @@ size = Vector2(14, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcuaf"]
 size = Vector2(335, 21)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rynfa"]
+texture = ExtResource("18_bftj5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jhfx"]
+texture = ExtResource("19_fpv2e")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6owla"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_rynfa")
+sources/1 = SubResource("TileSetAtlasSource_1jhfx")
+
 [node name="Cena" type="Node2D"]
+
+[node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
+follow_viewport_scale = -1.075
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
@@ -237,10 +516,11 @@ position = Vector2(0, -12)
 scale = Vector2(0.544737, 0.544737)
 texture = ExtResource("4_qb24r")
 
-[node name="Chest" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Chest" type="Node2D" parent="." node_paths=PackedStringArray("player", "aventureirosController")]
 position = Vector2(-1, 40)
 script = ExtResource("4_b1l47")
 player = NodePath("../Player")
+aventureirosController = NodePath("../Ui")
 
 [node name="Area2D" type="Area2D" parent="Chest"]
 position = Vector2(0, 27)
@@ -265,12 +545,9 @@ itemReceita = ExtResource("16_5qsdj")
 
 [node name="Caldeirao" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_vpkt5")]
 position = Vector2(-69, -16)
-itemResultante = ExtResource("7_14qm4")
+itemResultante = ExtResource("11_dmwo6")
 player = NodePath("../Player")
 tempoMax = 15.0
-
-[node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
-follow_viewport_scale = -1.075
 
 [node name="Fornecedor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
 position = Vector2(-135, 60)
@@ -278,12 +555,12 @@ itemEntregar = ExtResource("2_halj0")
 player = NodePath("../Player")
 
 [node name="Fornecedor3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
-position = Vector2(125, 58)
+position = Vector2(126, 66)
 itemEntregar = ExtResource("15_7elkp")
 player = NodePath("../Player")
 
 [node name="Fornecedor2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
-position = Vector2(97, -4)
+position = Vector2(63, 66)
 itemEntregar = ExtResource("12_rkcy8")
 player = NodePath("../Player")
 
@@ -312,6 +589,12 @@ tempoMax = 10.0
 [node name="MesaEncantamento" parent="." node_paths=PackedStringArray("player") instance=ExtResource("17_l06ur")]
 position = Vector2(32, -17)
 player = NodePath("../Player")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_6owla")
+format = 2
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(196603, 0, 2, 196604, 65536, 2, 65531, 0, 1, 131067, 0, 1, 65532, 65536, 1, 131068, 65536, 1, -65541, 131073, 7, -5, 0, 0, -65540, 196609, 7, -4, 65536, 0, -65539, 262145, 7, -3, 65536, 0, -65538, 65537, 7, -2, 65536, 0, -65537, 131073, 7, -1, 65536, 0, -131072, 196609, 7, -65536, 65536, 0, -131071, 262145, 7, -65535, 65536, 0, -131070, 65537, 7, -65534, 65536, 0, -131069, 131073, 7, -65533, 65536, 0, -131068, 196609, 7, -65532, 131072, 0, 3, 65536, 1, 65539, 65536, 1, 4, 131072, 1, 65540, 131072, 1, 131075, 65536, 2, 131076, 131072, 2, 131073, 65536, 2, 131074, 65536, 2, 196607, 65536, 2, 131072, 65536, 2, 1, 65536, 1, 65537, 65536, 1, 2, 65536, 1, 65538, 65536, 1, 65535, 65536, 1, 131071, 65536, 1, 0, 65536, 1, 65536, 65536, 1, 65533, 65536, 1, 131069, 65536, 1, 65534, 65536, 1, 131070, 65536, 1, 196605, 65536, 2, 196606, 65536, 2, -65542, 65537, 7, -6, 196608, 2, 65530, 196608, 2, 131066, 196608, 2, 196602, 196608, 2, -65531, 196608, 2, 5, 196608, 2, 65541, 196608, 2, 131077, 196608, 2, -131078, 65537, 6, -131077, 131073, 6, -131076, 196609, 6, -131075, 262145, 6, -131074, 65537, 6, -131073, 131073, 6, -196608, 196609, 6, -196607, 262145, 6, -196606, 65537, 6, -196605, 131073, 6, -196604, 196609, 6, -196603, 262145, 6, -131067, 262145, 7)
 
 [connection signal="body_entered" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chest/Area2D" to="Chest" method="_on_area_2d_body_exited"]

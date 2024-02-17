@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemClass" load_steps=3 format=3 uid="uid://lh1xtmcxbbfb"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/ItemClass.gd" id="1_kh27u"]
+[ext_resource type="Texture2D" uid="uid://c2wreriwrfha5" path="res://Sprites/Itens/heal.png" id="2_7gj5l"]
+
+[resource]
+script = ExtResource("1_kh27u")
+sprite = ExtResource("2_7gj5l")
+itemIndex = 0
+nome = "pocao"
+vida = 25.0
+interesse = 0.0
+classeAfetada = 3
+nEfeito = 0.0

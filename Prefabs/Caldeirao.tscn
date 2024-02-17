@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Estruturas/Caldeirao.gd" id="1_kyktf"]
 [ext_resource type="Texture2D" uid="uid://dp0clryrdnhqd" path="res://Sprites/Estruturas/Cenario2.png" id="1_mt0iu"]
-[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Items/ruby.tres" id="2_01h2y"]
+[ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Classes/Items/ruby.tres" id="2_01h2y"]
 [ext_resource type="Texture2D" uid="uid://csn85e7wouhg2" path="res://Sprites/UI/Alarme.png" id="4_heyef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqkik"]

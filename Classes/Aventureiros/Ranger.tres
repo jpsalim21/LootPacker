@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Aventureiro" load_steps=3 format=3 uid="uid://b2xudgfv0gsjc"]
+
+[ext_resource type="Script" path="res://Scripts/Aventureiros/AventureiroClass.gd" id="1_xl5gv"]
+[ext_resource type="Texture2D" uid="uid://dc71kliooi6fd" path="res://Sprites/Itens/Bow.png" id="2_reuwx"]
+
+[resource]
+script = ExtResource("1_xl5gv")
+sprite = ExtResource("2_reuwx")
+classeAtual = 2
+vidaMax = 80.0
+interesseMax = 80.0

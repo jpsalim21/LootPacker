@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Aventureiro" load_steps=3 format=3 uid="uid://0o5bc3o72yki"]
+
+[ext_resource type="Script" path="res://Scripts/Aventureiros/AventureiroClass.gd" id="1_sr5nc"]
+[ext_resource type="Texture2D" uid="uid://bo3gsfesfu3qy" path="res://Sprites/Itens/Iron Sword.png" id="2_iwrgw"]
+
+[resource]
+script = ExtResource("1_sr5nc")
+sprite = ExtResource("2_iwrgw")
+classeAtual = 0
+vidaMax = 100.0
+interesseMax = 70.0

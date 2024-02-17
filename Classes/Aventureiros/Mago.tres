@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Aventureiro" load_steps=3 format=3 uid="uid://cjdw6n3okg7qa"]
+
+[ext_resource type="Script" path="res://Scripts/Aventureiros/AventureiroClass.gd" id="1_3tu4x"]
+[ext_resource type="Texture2D" uid="uid://by05e3g6hgdmi" path="res://Sprites/Itens/Wooden Staff.png" id="2_6ifb4"]
+
+[resource]
+script = ExtResource("1_3tu4x")
+sprite = ExtResource("2_6ifb4")
+classeAtual = 1
+vidaMax = 70.0
+interesseMax = 100.0

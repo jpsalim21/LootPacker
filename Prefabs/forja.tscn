@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cs5cj2tivci1w"]
 
 [ext_resource type="Script" path="res://Scripts/Estruturas/WorkstationScript.gd" id="1_uymmu"]
-[ext_resource type="Resource" uid="uid://cyiu28dq26mco" path="res://Items/espada.tres" id="2_61e4g"]
+[ext_resource type="Resource" uid="uid://cyiu28dq26mco" path="res://Classes/Items/espada.tres" id="2_61e4g"]
 [ext_resource type="Texture2D" uid="uid://b4k8xmbplm35j" path="res://Sprites/Estruturas/Cenario1.png" id="3_p34hy"]
 [ext_resource type="PackedScene" uid="uid://c1o062afx8mr" path="res://Prefabs/minigame.tscn" id="4_6f2ww"]
 

@@ -51,6 +51,7 @@ func update_animation():
 	animatedSprite.play(animation)
 
 func changeItem(newItem: ItemClass):
+	var retorno = currentItem
 	currentItem = newItem
 	if(currentItem == null):
 		print("Trocou para nulo")
@@ -60,3 +61,4 @@ func changeItem(newItem: ItemClass):
 		print("Novo item: " + newItem.nome)
 		itemSprite.visible = true
 		itemSprite.texture = currentItem.sprite
+	return retorno

@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmwu66isp4wy8"]
+[gd_scene load_steps=5 format=3 uid="uid://dmwu66isp4wy8"]
 
 [ext_resource type="PackedScene" uid="uid://c1ivkp73agnyx" path="res://Prefabs/lifeBar.tscn" id="1_om7wy"]
+[ext_resource type="Script" path="res://Scripts/Aventureiros/AventureirosController.gd" id="1_rbjus"]
+[ext_resource type="Resource" uid="uid://cjdw6n3okg7qa" path="res://Classes/Aventureiros/Mago.tres" id="3_bvch0"]
+[ext_resource type="Resource" uid="uid://b2xudgfv0gsjc" path="res://Classes/Aventureiros/Ranger.tres" id="4_be3tg"]
 
 [node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_rbjus")
 
-[node name="Control" type="Control" parent="."]
+[node name="AventureirosController" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,29 +16,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LifeBar" parent="Control" instance=ExtResource("1_om7wy")]
-layout_mode = 1
-offset_left = 18.0
-offset_top = 16.0
-offset_right = -930.0
-offset_bottom = -475.0
-maxVida = 70.0
-maxInteresse = 50.0
+[node name="LifeBar" parent="AventureirosController" instance=ExtResource("1_om7wy")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 7.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="LifeBar2" parent="Control" instance=ExtResource("1_om7wy")]
-layout_mode = 1
-offset_left = 194.0
-offset_top = 18.0
-offset_right = -754.0
-offset_bottom = -436.0
-maxVida = 60.0
-maxInteresse = 60.0
+[node name="LifeBar2" parent="AventureirosController" instance=ExtResource("1_om7wy")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 220.0
+offset_top = 7.0
+offset_right = 220.0
+offset_bottom = 7.0
+grow_horizontal = 1
+grow_vertical = 1
+aventureiro = ExtResource("3_bvch0")
 
-[node name="LifeBar3" parent="Control" instance=ExtResource("1_om7wy")]
-layout_mode = 1
-offset_left = 372.0
-offset_top = 17.0
-offset_right = -576.0
-offset_bottom = -437.0
-maxVida = 50.0
-maxInteresse = 70.0
+[node name="LifeBar3" parent="AventureirosController" instance=ExtResource("1_om7wy")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 416.0
+offset_top = 8.0
+offset_right = 416.0
+offset_bottom = 8.0
+grow_horizontal = 1
+grow_vertical = 1
+aventureiro = ExtResource("4_be3tg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
