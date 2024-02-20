@@ -36,15 +36,7 @@ func enter(new, old):
 	if old == colisor:
 		near = false
 		spriteLight.visible = false
-		return
-
-func _on_area_2d_body_entered(body):
-	if body.name == "Player":
-		near = true
-func _on_area_2d_body_exited(body):
-	if body.name == "Player":
-		near = false
 		if rodando:
 			minigame.comecarESair(false)
 			rodando = false
-		
+		return

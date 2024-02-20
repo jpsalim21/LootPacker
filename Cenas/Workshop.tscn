@@ -1,14 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=23 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Classes/Items/ruby.tres" id="2_halj0"]
-[ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_b1l47"]
-[ext_resource type="Texture2D" uid="uid://brmnb2mijpw63" path="res://Sprites/chest_01.png" id="5_op4cw"]
 [ext_resource type="PackedScene" uid="uid://cs5cj2tivci1w" path="res://Prefabs/forja.tscn" id="7_jul0y"]
 [ext_resource type="Resource" uid="uid://lh1xtmcxbbfb" path="res://Classes/Items/pocao.tres" id="11_dmwo6"]
 [ext_resource type="PackedScene" uid="uid://btglo5338k5op" path="res://Prefabs/Fornecedor.tscn" id="11_k2e5d"]
 [ext_resource type="PackedScene" uid="uid://c2btuki0bxjpy" path="res://Prefabs/Caldeirao.tscn" id="11_vpkt5"]
 [ext_resource type="PackedScene" uid="uid://dmwu66isp4wy8" path="res://Prefabs/UI.tscn" id="12_0qqpj"]
 [ext_resource type="Resource" uid="uid://dq12gn426y8am" path="res://Classes/Items/madeira.tres" id="12_rkcy8"]
+[ext_resource type="PackedScene" uid="uid://bxxfpacv2ffxj" path="res://Prefabs/chest.tscn" id="13_m4y3w"]
 [ext_resource type="PackedScene" uid="uid://dsb3v6hphb420" path="res://Prefabs/Fornalha.tscn" id="14_f4wes"]
 [ext_resource type="PackedScene" uid="uid://wmo8dg10m2wo" path="res://Prefabs/player.tscn" id="14_n15k1"]
 [ext_resource type="Resource" uid="uid://m67wulwr0b1g" path="res://Classes/Items/minerioFerro.tres" id="15_7elkp"]
@@ -18,12 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bvsvvtrs07oqa" path="res://Sprites/Tileset/TX Tileset Stone Ground.png" id="18_bftj5"]
 [ext_resource type="Texture2D" uid="uid://c8gx0h65k5nhl" path="res://Sprites/Tileset/TX Tileset Wall.png" id="19_fpv2e"]
 [ext_resource type="Texture2D" uid="uid://dqlg2l2sdohet" path="res://Sprites/Tileset/TX Props.png" id="20_83ywk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygfd4"]
-size = Vector2(53.5, 51)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh0ew"]
-size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcuaf"]
 size = Vector2(335, 21)
@@ -324,28 +317,9 @@ tempoMax = 15.0
 player = NodePath("../../Player")
 itemReceita = ExtResource("16_5qsdj")
 
-[node name="Chest" type="Node2D" parent="Cenario" node_paths=PackedStringArray("player", "aventureirosController")]
-position = Vector2(-1, 40)
-script = ExtResource("4_b1l47")
+[node name="Chest" parent="Cenario" node_paths=PackedStringArray("player", "aventureirosController") instance=ExtResource("13_m4y3w")]
 player = NodePath("../../Player")
 aventureirosController = NodePath("../../Ui")
-
-[node name="Area2D" type="Area2D" parent="Cenario/Chest"]
-position = Vector2(0, 27)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Chest/Area2D"]
-shape = SubResource("RectangleShape2D_ygfd4")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Cenario/Chest"]
-
-[node name="Chest" type="Sprite2D" parent="Cenario/Chest/StaticBody2D"]
-position = Vector2(0, 27)
-texture = ExtResource("5_op4cw")
-hframes = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Chest/StaticBody2D"]
-position = Vector2(0, 26.5)
-shape = SubResource("RectangleShape2D_jh0ew")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
@@ -370,13 +344,6 @@ layer_0/tile_data = PackedInt32Array(-5, 196608, 3, -4, 196608, 3, -3, 196608, 3
 position = Vector2(-151, 30)
 player = NodePath("../Player")
 
-[node name="Caixa3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_32iay")]
-position = Vector2(-131.5, 15)
-player = NodePath("../Player")
-
 [node name="Caixa" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_32iay")]
 position = Vector2(-151, 15)
 player = NodePath("../Player")
-
-[connection signal="body_entered" from="Cenario/Chest/Area2D" to="Cenario/Chest" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Cenario/Chest/Area2D" to="Cenario/Chest" method="_on_area_2d_body_exited"]

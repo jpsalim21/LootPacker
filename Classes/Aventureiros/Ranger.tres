@@ -7,5 +7,5 @@
 script = ExtResource("1_xl5gv")
 sprite = ExtResource("2_reuwx")
 classeAtual = 2
-vidaMax = 80.0
-interesseMax = 80.0
+vidaMax = 110.0
+interesseMax = 110.0
