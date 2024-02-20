@@ -21,7 +21,7 @@ func _ready():
 	timer.start()
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		#AplicaItem()
 		pass

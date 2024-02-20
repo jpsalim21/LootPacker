@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvcgd1v02u28t"]
+
+[ext_resource type="Script" path="res://Scripts/Estruturas/Caixa.gd" id="1_m1cwi"]
+[ext_resource type="Texture2D" uid="uid://dqlg2l2sdohet" path="res://Sprites/Tileset/TX Props.png" id="1_w1uu0"]
+[ext_resource type="Texture2D" uid="uid://bo3gsfesfu3qy" path="res://Sprites/Itens/Iron Sword.png" id="2_3dsjv"]
+[ext_resource type="Script" path="res://Scripts/Estruturas/DetectaPlayer.gd" id="2_fdad6"]
+[ext_resource type="Texture2D" uid="uid://c1tlgt05g43wh" path="res://Sprites/PlaceHolder/Quadrado.png" id="3_df5xp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bmkc"]
+size = Vector2(13, 9.875)
+
+[node name="Caixa" type="Node2D"]
+script = ExtResource("1_m1cwi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 5)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_fdad6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6bmkc")
+
+[node name="TxProps" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_w1uu0")
+region_enabled = true
+region_rect = Rect2(163, 86, 26, 39)
+
+[node name="Quadrado" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.345098)
+position = Vector2(0, -5)
+scale = Vector2(0.4065, 0.3125)
+texture = ExtResource("3_df5xp")
+
+[node name="IronSword" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.304688, 0.304688)
+texture = ExtResource("2_3dsjv")

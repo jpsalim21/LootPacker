@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dew7ertk8kbah"]
+
+[ext_resource type="PackedScene" uid="uid://wmo8dg10m2wo" path="res://Prefabs/player.tscn" id="1_1xbfk"]
+[ext_resource type="PackedScene" uid="uid://bvcgd1v02u28t" path="res://Prefabs/caixa.tscn" id="2_6tspx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
+process_callback = 0
+
+[node name="Player" parent="." node_paths=PackedStringArray("objeto") instance=ExtResource("1_1xbfk")]
+position = Vector2(0, 0)
+objeto = NodePath("../Caixa")
+
+[node name="Caixa" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_6tspx")]
+position = Vector2(-114, -3)
+player = NodePath("../Player")
+
+[node name="Caixa2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_6tspx")]
+position = Vector2(-114, 7)
+player = NodePath("../Player")

@@ -1,20 +1,19 @@
 extends CharacterBody2D
 class_name Player
 
-var SPEED = 60.0
+var SPEED = 100.0
 var directionVector = Vector2.ZERO
 var animation = ""
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var itemSprite : Sprite2D = $ItemSprite
 @export var currentItem : ItemClass
 
+signal aproximou(novo, velho)
+
+@export var objeto : Node2D
+
 func _process(_delta):
-	if Input.is_action_just_pressed("run"):
-		SPEED += 40
-		animatedSprite.speed_scale = 1.5
-	elif Input.is_action_just_released("run") and SPEED == 100.0:
-		SPEED -= 40
-		animatedSprite.speed_scale = 1
+	print(self.position.distance_to(objeto.position))
 	update_animation()
 
 func _physics_process(_delta):
