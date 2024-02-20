@@ -284,6 +284,7 @@ position = Vector2(105, -1)
 [node name="MesaEncantamento" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("17_l06ur")]
 position = Vector2(32, -17)
 player = NodePath("../../Player")
+tempoMax = 15.0
 
 [node name="Fornalha" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("14_f4wes")]
 position = Vector2(-17, -16)
@@ -311,7 +312,7 @@ player = NodePath("../../Player")
 position = Vector2(-69, -16)
 itemResultante = ExtResource("11_dmwo6")
 player = NodePath("../../Player")
-tempoMax = 15.0
+tempoMax = 8.0
 
 [node name="Forja" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("7_jul0y")]
 player = NodePath("../../Player")
