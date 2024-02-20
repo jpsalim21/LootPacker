@@ -11,9 +11,9 @@ var animation = ""
 signal aproximou(novo, velho)
 
 @export var objeto : Node2D
+@onready var area2D : Node2D = $ItemSprite
 
 func _process(_delta):
-	print(self.position.distance_to(objeto.position))
 	update_animation()
 
 func _physics_process(_delta):
@@ -53,11 +53,9 @@ func changeItem(newItem: ItemClass):
 	var retorno = currentItem
 	currentItem = newItem
 	if(currentItem == null):
-		print("Trocou para nulo")
 		itemSprite.visible = false
 		itemSprite.texture = null
 	else:
-		print("Novo item: " + newItem.nome)
 		itemSprite.visible = true
 		itemSprite.texture = currentItem.sprite
 	return retorno

@@ -10,6 +10,12 @@ var jaComecou : bool = false
 @export var itemReceita : ItemClass
 @onready var minigame : Minigame = $Minigame
 
+@onready var spriteLight = $Icon2
+@onready var colisor = $StaticBody2D
+
+func _ready():
+	player.aproximou.connect(enter)
+
 func _process(_delta):
 	if near and Input.is_action_just_pressed("interact") and !rodando:
 		if player.currentItem == itemReceita or jaComecou:
@@ -21,6 +27,16 @@ func _process(_delta):
 func terminouMinigame():
 	player.changeItem(itemEntregue)
 	jaComecou = false
+
+func enter(new, old):
+	if new == colisor:
+		near = true
+		spriteLight.visible = true
+		return
+	if old == colisor:
+		near = false
+		spriteLight.visible = false
+		return
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":

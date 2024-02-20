@@ -14,11 +14,16 @@ var tempo : float = 0
 var cozinhando : bool = false
 var pronto : bool = false
 
+@onready var colisor = $StaticBody2D
+@onready var spriteLight = $Cenario3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player.aproximou.connect(enter)
 	barraProgresso.visible = false
 	barraProgresso.value = tempo
 	barraProgresso.max_value = tempoMax
+	spriteLight.visible = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,21 +48,26 @@ func _process(delta):
 		elif !pronto:
 			barraProgresso.visible = false
 			pronto = true
+			timerEspera.wait_time = 3
 			timerEspera.start()
 	pass
-	
-func _on_area_2d_body_entered(body):
-	if body.name == "Player":
-		near = true
-func _on_area_2d_body_exited(body):
-	if body.name == "Player":
-		near = false
 
+func enter(new, old):
+	print("Chamou no " + self.name)
+	if new == colisor:
+		near = true
+		spriteLight.visible = true
+		return
+	if old == colisor:
+		near = false
+		spriteLight.visible = false
+		return
 
 func _on_timer_timeout():
 	alarme.visible = not alarme.visible
 	if alarme.visible:
 		print("Timer começou")
+		timerEspera.wait_time = 6
 		timerEspera.start()
 	else:
 		timerEspera.stop()

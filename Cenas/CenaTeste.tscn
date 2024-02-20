@@ -11,7 +11,7 @@ process_callback = 0
 
 [node name="Player" parent="." node_paths=PackedStringArray("objeto") instance=ExtResource("1_1xbfk")]
 position = Vector2(0, 0)
-objeto = NodePath("../Caixa")
+objeto = NodePath("../Caixa2")
 
 [node name="Caixa" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_6tspx")]
 position = Vector2(-114, -3)

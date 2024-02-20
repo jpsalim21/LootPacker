@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://63t6wqhhe3dq"]
+[gd_scene load_steps=26 format=3 uid="uid://63t6wqhhe3dq"]
 
 [ext_resource type="Resource" uid="uid://b4jn4fhtr2is5" path="res://Classes/Items/ruby.tres" id="2_halj0"]
 [ext_resource type="Script" path="res://Scripts/Estruturas/ChestScript.gd" id="4_b1l47"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://m67wulwr0b1g" path="res://Classes/Items/minerioFerro.tres" id="15_7elkp"]
 [ext_resource type="Resource" uid="uid://b8nodw5g0xack" path="res://Classes/Items/barraFerro.tres" id="16_5qsdj"]
 [ext_resource type="PackedScene" uid="uid://7o4s31xwqeqr" path="res://Prefabs/MesaEncantamento.tscn" id="17_l06ur"]
+[ext_resource type="PackedScene" uid="uid://bvcgd1v02u28t" path="res://Prefabs/caixa.tscn" id="18_32iay"]
 [ext_resource type="Texture2D" uid="uid://bvsvvtrs07oqa" path="res://Sprites/Tileset/TX Tileset Stone Ground.png" id="18_bftj5"]
 [ext_resource type="Texture2D" uid="uid://c8gx0h65k5nhl" path="res://Sprites/Tileset/TX Tileset Wall.png" id="19_fpv2e"]
 [ext_resource type="Texture2D" uid="uid://dqlg2l2sdohet" path="res://Sprites/Tileset/TX Props.png" id="20_83ywk"]
@@ -277,44 +278,56 @@ sources/1 = SubResource("TileSetAtlasSource_0ianp")
 sources/2 = SubResource("TileSetAtlasSource_wotoo")
 
 [node name="Cena" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Ui" parent="." instance=ExtResource("12_0qqpj")]
 follow_viewport_scale = -1.075
 
+[node name="Player" parent="." instance=ExtResource("14_n15k1")]
+position = Vector2(105, -1)
+
 [node name="Cenario" type="Node2D" parent="."]
 
-[node name="MesaEncantamento" parent="Cenario" instance=ExtResource("17_l06ur")]
+[node name="MesaEncantamento" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("17_l06ur")]
 position = Vector2(32, -17)
+player = NodePath("../../Player")
 
-[node name="Fornalha" parent="Cenario" instance=ExtResource("14_f4wes")]
+[node name="Fornalha" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("14_f4wes")]
 position = Vector2(-17, -16)
 ingrediente = ExtResource("15_7elkp")
 itemResultante = ExtResource("16_5qsdj")
+player = NodePath("../../Player")
 tempoMax = 10.0
 
-[node name="Fornecedor2" parent="Cenario" instance=ExtResource("11_k2e5d")]
+[node name="Fornecedor2" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
 position = Vector2(63, 66)
 itemEntregar = ExtResource("12_rkcy8")
+player = NodePath("../../Player")
 
-[node name="Fornecedor3" parent="Cenario" instance=ExtResource("11_k2e5d")]
+[node name="Fornecedor3" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
 position = Vector2(126, 66)
 itemEntregar = ExtResource("15_7elkp")
+player = NodePath("../../Player")
 
-[node name="Fornecedor" parent="Cenario" instance=ExtResource("11_k2e5d")]
+[node name="Fornecedor" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("11_k2e5d")]
 position = Vector2(-135, 60)
 itemEntregar = ExtResource("2_halj0")
+player = NodePath("../../Player")
 
-[node name="Caldeirao" parent="Cenario" instance=ExtResource("11_vpkt5")]
+[node name="Caldeirao" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("11_vpkt5")]
 position = Vector2(-69, -16)
 itemResultante = ExtResource("11_dmwo6")
+player = NodePath("../../Player")
 tempoMax = 15.0
 
-[node name="Forja" parent="Cenario" instance=ExtResource("7_jul0y")]
+[node name="Forja" parent="Cenario" node_paths=PackedStringArray("player") instance=ExtResource("7_jul0y")]
+player = NodePath("../../Player")
 itemReceita = ExtResource("16_5qsdj")
 
-[node name="Chest" type="Node2D" parent="Cenario" node_paths=PackedStringArray("aventureirosController")]
+[node name="Chest" type="Node2D" parent="Cenario" node_paths=PackedStringArray("player", "aventureirosController")]
 position = Vector2(-1, 40)
 script = ExtResource("4_b1l47")
+player = NodePath("../../Player")
 aventureirosController = NodePath("../../Ui")
 
 [node name="Area2D" type="Area2D" parent="Cenario/Chest"]
@@ -338,8 +351,6 @@ shape = SubResource("RectangleShape2D_jh0ew")
 zoom = Vector2(3.5, 3.5)
 process_callback = 0
 
-[node name="Player" parent="." instance=ExtResource("14_n15k1")]
-
 [node name="ColisorParedes" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ColisorParedes"]
@@ -355,11 +366,17 @@ rendering_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(-5, 196608, 3, -4, 196608, 3, -3, 196608, 3, -2, 196608, 3, -1, 196608, 3, -65536, 196608, 3, -65535, 196608, 3, -65534, 196608, 3, -65533, 196608, 3, -65532, 196608, 3, 4, 196608, 3, 65540, 196608, 3, 131076, 196608, 3, 131075, 196608, 3, 131074, 196608, 3, 131073, 196608, 3, 131072, 196608, 3, 196607, 196608, 3, 196606, 196608, 3, 196605, 196608, 3, 196604, 196608, 3, 196603, 196608, 3, 131067, 196608, 3, 65531, 196608, 3, 65532, 196608, 3, 131068, 196608, 3, 131069, 196608, 3, 65533, 196608, 3, 131070, 196608, 3, 65534, 196608, 3, 131071, 196608, 3, 65535, 196608, 3, 65536, 196608, 3, 0, 196608, 3, 65537, 196608, 3, 65538, 196608, 3, 2, 196608, 3, 1, 196608, 3, 65539, 196608, 3, 3, 196608, 3, -6, 196608, 3, 65530, 196608, 3, 131066, 196608, 3, 196602, 196608, 3, 131077, 196608, 3, 65541, 196608, 3, 5, 196608, 3, -65531, 196608, 3, -131078, 65537, 6, -65542, 65537, 7, -131077, 131073, 6, -65541, 131073, 7, -131076, 196609, 6, -65540, 196609, 7, -131075, 262145, 6, -65539, 262145, 7, -131074, 65537, 6, -65538, 65537, 7, -131073, 131073, 6, -65537, 131073, 7, -196608, 196609, 6, -131072, 196609, 7, -196607, 262145, 6, -131071, 262145, 7, -196606, 65537, 6, -131070, 65537, 7, -196605, 131073, 6, -131069, 131073, 7, -196604, 196609, 6, -131068, 196609, 7, -196603, 262145, 6, -131067, 262145, 7)
 
-[node name="TxProps" type="Sprite2D" parent="."]
-position = Vector2(-147, 41)
-texture = ExtResource("20_83ywk")
-region_enabled = true
-region_rect = Rect2(160, 18, 32, 46)
+[node name="Caixa2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_32iay")]
+position = Vector2(-151, 30)
+player = NodePath("../Player")
+
+[node name="Caixa3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_32iay")]
+position = Vector2(-131.5, 15)
+player = NodePath("../Player")
+
+[node name="Caixa" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_32iay")]
+position = Vector2(-151, 15)
+player = NodePath("../Player")
 
 [connection signal="body_entered" from="Cenario/Chest/Area2D" to="Cenario/Chest" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Cenario/Chest/Area2D" to="Cenario/Chest" method="_on_area_2d_body_exited"]

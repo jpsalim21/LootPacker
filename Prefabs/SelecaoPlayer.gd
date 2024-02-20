@@ -17,18 +17,20 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	listaObjetos.append(body)
-	print("Adicionei")
 func _on_body_exited(body):
+	calculaMenor()
 	listaObjetos.erase(body)
-	print("Removi")
 	
 func calculaMenor():
-	if listaObjetos.is_empty(): return
+	if listaObjetos.is_empty(): 
+		if oldObject != null:
+			player.aproximou.emit(null, oldObject)
+			oldObject = null
+		return
 	var _objetoEscolhido = null
 	var menorDist = 3000
 	for item : Node2D in listaObjetos:
-		var dist = self.position.distance_to(item.position)
-		print(dist)
+		var dist = self.global_position.distance_squared_to(item.global_position)
 		if dist < menorDist: 
 			menorDist = dist
 			_objetoEscolhido = item
