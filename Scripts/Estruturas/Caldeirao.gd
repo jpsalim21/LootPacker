@@ -53,7 +53,6 @@ func _process(delta):
 	pass
 
 func enter(new, old):
-	print("Chamou no " + self.name)
 	if new == colisor:
 		near = true
 		spriteLight.visible = true
@@ -66,7 +65,6 @@ func enter(new, old):
 func _on_timer_timeout():
 	alarme.visible = not alarme.visible
 	if alarme.visible:
-		print("Timer começou")
 		timerEspera.wait_time = 6
 		timerEspera.start()
 	else:

@@ -9,6 +9,6 @@ sprite = ExtResource("2_xe4sm")
 itemIndex = 0
 nome = ""
 vida = 0.0
-interesse = 25.0
+interesse = 50.0
 classeAfetada = 1
 nEfeito = 0.0

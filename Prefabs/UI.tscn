@@ -52,6 +52,5 @@ grow_vertical = 1
 aventureiro = ExtResource("4_be3tg")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,6 +9,6 @@ sprite = ExtResource("2_qofim")
 itemIndex = 3
 nome = "Espada"
 vida = 0.0
-interesse = 25.0
+interesse = 50.0
 classeAfetada = 0
 nEfeito = 0.0

@@ -25,12 +25,19 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		#AplicaItem()
 		pass
-	pass
 
 func AplicaItem(item : ItemClass):
 	if aventureirosProntos.is_empty():
 		return
+	
 	var aventureiroAtual : lifeBarScript = aventureirosProntos[0]
+	var lastPosition = aventureirosProntos[aventureirosProntos.size() - 1].position
+	
+	for i in range(aventureirosProntos.size() - 1, 0, -1):
+		aventureirosProntos[i].position = aventureirosProntos[i-1].position
+	
+	aventureirosProntos[0].position = lastPosition
+	
 	aventureirosProntos.erase(aventureiroAtual)
 	aventureirosProntos.append(aventureiroAtual)
 	aventureiroAtual.aplicaItem(item)
